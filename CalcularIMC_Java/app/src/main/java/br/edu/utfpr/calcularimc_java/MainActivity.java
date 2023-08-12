@@ -38,6 +38,19 @@ public class MainActivity extends AppCompatActivity {
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (  etPeso.getText().toString().equals( "" ) ) {
+                    etPeso.setError( "Campo peso deve ser preenchido" );
+                    etPeso.requestFocus();
+                    return;
+                }
+
+                if (  etAltura.getText().toString().equals( "" ) ) {
+                    etAltura.setError( "Campo altura deve ser preenchido" );
+                    etAltura.requestFocus();
+                    return;
+                }
+
+
                 double peso = Double.parseDouble(etPeso.getText().toString());
                 double altura = Double.parseDouble(etAltura.getText().toString());
 
