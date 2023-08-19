@@ -1,11 +1,10 @@
 fun main() {
 
-
     repeat(23) {
         print("-")
     }
 
-    println()
+    println("/n FOR ")
     for (i in 1..5){
         println(i)
     }
@@ -15,6 +14,5 @@ fun main() {
     for (item in colecao){
         println(item)
     }
-
 
 }
