@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
         val peso = etPeso.text.toString().toDouble()
         val altura = etAltura.text.toString().toDouble()
 
-        var imc : Double;
-        var dacimalForamt: DecimalFormat;
+        var imc : Double
+        var dacimalForamt: DecimalFormat
 
             if(!Locale.getDefault().language.equals("en")){
             imc = peso / altura.pow( 2.0 )
