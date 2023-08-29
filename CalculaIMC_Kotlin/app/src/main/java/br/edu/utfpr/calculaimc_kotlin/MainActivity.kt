@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.text.DecimalFormat
+import java.text.NumberFormat
+import java.util.Locale
 import kotlin.math.pow
 
 class MainActivity : AppCompatActivity() {
@@ -65,9 +68,21 @@ class MainActivity : AppCompatActivity() {
         val peso = etPeso.text.toString().toDouble()
         val altura = etAltura.text.toString().toDouble()
 
-        val imc = peso / altura.pow( 2.0 )
+        var imc : Double;
+        var dacimalForamt: DecimalFormat;
 
-        tvResultado.text = "%.1f".format( imc )
+            if(!Locale.getDefault().language.equals("en")){
+            imc = peso / altura.pow( 2.0 )
+
+            dacimalForamt = DecimalFormat("0.0")
+        }else{
+            imc = 703 * (peso / altura.pow( 2.0 ))
+
+            val numberFormat = NumberFormat.getNumberInstance(Locale.US)
+                dacimalForamt = numberFormat as DecimalFormat
+        }
+
+        tvResultado.text = dacimalForamt.format( imc )
     }
 
 
