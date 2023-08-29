@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Peso :"
         android:padding="16dp"
-        app:layout_constraintStart_toStarOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -22,11 +22,12 @@
         android:padding="16dp"
         android:inputType="numberDecimal"
         android:hint="Peso em Kg"
+        android:textColorHint="#8D6E63"
         android:layout_marginEnd="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvPeso"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/tvAltura"
@@ -34,7 +35,7 @@
         android:layout_height="wrap_content"
         android:text="Altura :"
         android:padding="16dp"
-        app:layout_constraintStart_toStarOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPeso" />
 
     <EditText
@@ -44,11 +45,12 @@
         android:padding="16dp"
         android:inputType="numberDecimal"
         android:hint="Altura em m"
+        android:textColorHint="#8D6E63"
         android:layout_marginEnd="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tvAltura"
+        app:layout_constraintStart_toEndOf="@+id/tvPeso"
         app:layout_constraintTop_toBottomOf="@id/etPeso"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/tvICM"
@@ -56,7 +58,7 @@
         android:layout_height="wrap_content"
         android:text="IMC"
         android:padding="16dp"
-        app:layout_constraintStart_toStarOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAltura" />
 
     <TextView
@@ -77,7 +79,7 @@
         app:layout_constraintStart_toStartOf="@+id/tvResultado"
         app:layout_constraintTop_toBottomOf="@+id/tvResultado"
         />
-    
+
     <Space
         android:id="@+id/espaco"
         android:layout_width="20dp"
@@ -89,7 +91,7 @@
         android:id="@+id/btLimpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Calcular"
+        android:text="Limpar"
         android:padding="16dp"
         app:layout_constraintStart_toEndOf="@+id/espaco"
         app:layout_constraintTop_toBottomOf="@+id/tvResultado"
