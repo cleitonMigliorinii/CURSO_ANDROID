@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
     * lateinit é uma palavra-chave usada para declarar uma propriedade
     * não anulável (non-nullable) cujo valor será atribuído posteriormente
     * */
-    private lateinit var etPeso: EditText;
-    private lateinit var etAltura : EditText;
+    private lateinit var etPeso: EditText
+    private lateinit var etAltura : EditText
     private lateinit var tvResultado : TextView
     private lateinit var btCalcular : Button
     private lateinit var btLimpar : Button
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btLimpar.setOnLongClickListener {
-            Toast.makeText( this, "Botão para Limpar", Toast.LENGTH_SHORT ).show()
+            Toast.makeText( this, getString(R.string.long_limpar), Toast.LENGTH_SHORT ).show()
             false
         }
     }
@@ -46,19 +46,19 @@ class MainActivity : AppCompatActivity() {
     private fun btLimparOnClick() {
         etPeso.setText( "" )
         etAltura.setText( "" )
-        tvResultado.text = "0.0"
+        tvResultado.text = getString(R.string.zeros)
         etPeso.requestFocus()
     }
 
     private fun btCalcularOnClick() {
 
         if ( etPeso.text.toString().isEmpty() ) {
-            etPeso.error = "Campo peso deve ser preenchido"
+            etPeso.error = getString(R.string.erro_peso)
             return
         }
 
         if ( etAltura.text.toString().isEmpty() ) {
-            etAltura.error = "Campo altura deve ser preenchido"
+            etAltura.error = getString(R.string.erro_altura)
             return
         }
 
