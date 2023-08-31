@@ -11,7 +11,8 @@ import org.junit.Assert.*
  */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun testar_calculo_imc_dife() {
+        val calculo = MainActivity.Calculo()
+        assertEquals(24.9, calculo.calcularImc (90.0, 1.90, "pt"))
     }
 }
