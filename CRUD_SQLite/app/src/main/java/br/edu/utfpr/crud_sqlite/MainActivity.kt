@@ -1,10 +1,12 @@
 package br.edu.utfpr.crud_sqlite
 
+import android.content.ContentValues
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,9 +30,20 @@ class MainActivity : AppCompatActivity() {
         banco.execSQL("CREATE TABLE IF NOT EXISTS aluno (_id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, telefone TEXT )")
     }
 
+    fun btIncluirOnClick(view: View) {
+
+        val registro = ContentValues()
+        registro.put("nome", etNome.text.toString());
+        registro.put("telefone", etTelefone.text.toString())
+
+        banco.insert("aluno", null, registro )
+
+        Toast.makeText(this, "Inclusão Efetuada com Sucesso", Toast.LENGTH_SHORT).show();
+    }
+
     fun btListarOnClick(view: View) {}
     fun btPesquisarOnClick(view: View) {}
     fun btExcluirOnClick(view: View) {}
     fun btAlterarOnClick(view: View) {}
-    fun btIncluirOnClick(view: View) {}
+
 }
