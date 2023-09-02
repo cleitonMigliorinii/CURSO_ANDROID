@@ -2,6 +2,7 @@ package br.edu.utfpr.calculaimc_kotlin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -44,6 +45,38 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText( this, getString(R.string.long_limpar), Toast.LENGTH_SHORT ).show()
             false
         }
+
+        Log.d("ciclo_de_vida", "onCreate executado")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("ciclo_de_vida", "onStart executado")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("ciclo_de_vida", "onResume executado")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("ciclo_de_vida", "onPause executado")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("ciclo_de_vida", "onStop executado")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ciclo_de_vida", "onDestroy executado")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("ciclo_de_vida", "onRestart executado")
     }
 
     private fun btLimparOnClick() {
