@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LancamentoActivity">
+
+    <TextView
+        android:id="@+id/tvCodigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Cód."
+        app:layout_constraintBottom_toBottomOf="@+id/etCodLancamento"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/etCodLancamento" />
+
+    <EditText
+        android:id="@+id/etCodLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Código do produto"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvQuantidadeLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Qtd."
+        app:layout_constraintBottom_toBottomOf="@+id/etQtdeLancamento"
+        app:layout_constraintStart_toStartOf="@+id/tvCodigo"
+        app:layout_constraintTop_toTopOf="@+id/etQtdeLancamento" />
+
+    <EditText
+        android:id="@+id/etQtdeLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Quantidade Produto"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCodLancamento" />
+
+    <TextView
+        android:id="@+id/tvValorLançamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Valor"
+        app:layout_constraintBottom_toBottomOf="@+id/etValorLancamento"
+        app:layout_constraintStart_toStartOf="@+id/tvQuantidadeLancamento"
+        app:layout_constraintTop_toTopOf="@+id/etValorLancamento" />
+
+    <EditText
+        android:id="@+id/etValorLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Valor do Lançamento"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etQtdeLancamento" />
+
+    <Button
+        android:id="@+id/btConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="btConfirmarLancamento"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="@+id/etValorLancamento"
+        app:layout_constraintStart_toStartOf="@+id/etValorLancamento"
+        app:layout_constraintTop_toBottomOf="@+id/etValorLancamento" />
+
+    <Button
+        android:id="@+id/btLimparLancamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="limparLancamentoOnClick"
+        android:text="Limpar"
+        app:layout_constraintBottom_toBottomOf="@+id/etCodLancamento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/etCodLancamento"
+        app:layout_constraintTop_toTopOf="@+id/etCodLancamento" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
