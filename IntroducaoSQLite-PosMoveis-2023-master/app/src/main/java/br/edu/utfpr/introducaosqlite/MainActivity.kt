@@ -1,6 +1,7 @@
 package br.edu.utfpr.introducaosqlite
 
 import android.content.ContentValues
+import android.content.Intent
 import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -38,9 +39,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btListarOnClick(view: View) {
-        val saida = banco.listar()
+        //val saida = banco.listar()
 
-        Toast.makeText( this, saida.toString(), Toast.LENGTH_LONG ).show()
+        //Toast.makeText( this, saida.toString(), Toast.LENGTH_LONG ).show()
+
+        val intent = Intent(this, ListarActivity::class.java)
+        startActivity(intent)
     }
 
     fun btAlterarOnClick(view: View) {
