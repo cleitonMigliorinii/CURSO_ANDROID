@@ -19,6 +19,8 @@ class DatabaseHandler( context : Context ) : SQLiteOpenHelper ( context, DATABAS
         private val KEY_TELEFONE = "telefone"
     }
 
+
+
     fun incluir( pessoa : Pessoa ) {
         val db = this.writableDatabase
 
@@ -62,33 +64,32 @@ class DatabaseHandler( context : Context ) : SQLiteOpenHelper ( context, DATABAS
     }
 
     fun listar() : MutableList<Pessoa> {
+
         val db = this.writableDatabase
 
         val registro = db.query( TABLE_NAME,
-            null, null, null, null, null, null );
+            null, null, null, null, null, null )
 
         var saida = StringBuilder()
 
-        var registros = mutableListOf<Pessoa>()
+        val registros = mutableListOf<Pessoa>()
 
         while( registro.moveToNext() ) {
-            var pessoa = Pessoa(registro.getInt( 0 ), registro.getString( 1 ), registro.getString( 2 ))
-
-            registros.add(pessoa)
-
+            val pessoa = Pessoa( registro.getInt( 0 ), registro.getString( 1 ), registro.getString( 2 ) )
+            registros.add( pessoa )
         }
 
         return registros
 
     }
 
-    fun listarCursos() : Cursor? {
+    fun listarCursor() : Cursor {
         val db = this.writableDatabase
 
-        val registro = db.query( TABLE_NAME,
-            null, null, null, null, null, null );
+        val registros = db.query( TABLE_NAME,
+            null, null, null, null, null, null )
 
-        return registro
+        return registros
 
     }
 

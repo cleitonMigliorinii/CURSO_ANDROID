@@ -13,7 +13,9 @@ import br.edu.utfpr.introducaosqlite.entity.Pessoa
 import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var banco: DatabaseHandler
+
     private lateinit var etCod: EditText
     private lateinit var etNome: EditText
     private lateinit var etTelefone: EditText
@@ -40,11 +42,9 @@ class MainActivity : AppCompatActivity() {
 
     fun btListarOnClick(view: View) {
         //val saida = banco.listar()
-
         //Toast.makeText( this, saida.toString(), Toast.LENGTH_LONG ).show()
-
-        val intent = Intent(this, ListarActivity::class.java)
-        startActivity(intent)
+        val intent = Intent( this, ListarActivity::class.java )
+        startActivity( intent )
     }
 
     fun btAlterarOnClick(view: View) {

@@ -5,40 +5,39 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SimpleCursorAdapter
+import br.edu.utfpr.introducaosqlite.adapter.MeuAdapter
 import br.edu.utfpr.introducaosqlite.database.DatabaseHandler
 import br.edu.utfpr.introducaosqlite.entity.Pessoa
 
 class ListarActivity : AppCompatActivity() {
 
-    private lateinit var lvRegistros : ListView;
     private lateinit var banco: DatabaseHandler
+
+    private lateinit var lvRegistros : ListView;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listar)
 
         banco = DatabaseHandler( this )
+        val cursor = banco.listarCursor()
 
-        val cursor = banco.listarCursos()
+        val adapter = MeuAdapter( this, cursor )
 
-        val adapter = SimpleCursorAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            cursor,
-            arrayOf("nome"),
-            intArrayOf(android.R.id.text1),0
-        )
-
-        lvRegistros = findViewById(R.id.lvRegistros)
+        lvRegistros = findViewById( R.id.lvRegistros )
         lvRegistros.adapter = adapter
+
     }
 
-   /* fun recuperaArrayString(registros: MutableList<Pessoa>): MutableList<String>{
+    /*fun recuperaArrayString( registros : MutableList<Pessoa> ) : MutableList<String> {
+
         val listaNome = mutableListOf<String>()
 
-        for(pessoal in registros){
-            listaNome.add(pessoal.nome)
+        for ( pessoa in registros ) {
+            listaNome.add( pessoa.nome )
         }
 
-        return  listaNome
+        return listaNome
     }*/
+
 }
